@@ -287,7 +287,16 @@
             { spanish: "premio", english: "prize", context: "The prize is big.", translation: "El premio es grande." },
             { spanish: "tercera", english: "third", context: "It’s the third time.", translation: "Es la tercera vez." }
         ];
+function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
 
+    // Mezclar las palabras antes de mostrar las preguntas
+    shuffle(words);
+        
         let currentIndex = 0;
 
         function loadQuestion() {
